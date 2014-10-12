@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Built-By: artem.golubev
+Build-Jdk: 1.7.0_67
+Created-By: Maven Integration for Eclipse

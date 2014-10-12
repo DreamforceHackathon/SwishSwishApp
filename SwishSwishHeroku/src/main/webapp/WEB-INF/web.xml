@@ -23,7 +23,7 @@ limitations under the License.
   <!-- filters -->
   <filter>
     <filter-name>authFilter</filter-name>
-    <filter-class>com.uno.voiceblogger.AuthFilter</filter-class>
+    <filter-class>com.partlycloudy.swishswish.AuthFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>authFilter</filter-name>
@@ -32,7 +32,7 @@ limitations under the License.
 
   <filter>
     <filter-name>reauthFilter</filter-name>
-    <filter-class>com.uno.voiceblogger.ReauthFilter</filter-class>
+    <filter-class>com.partlycloudy.swishswish.ReauthFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>reauthFilter</filter-name>
@@ -43,7 +43,7 @@ limitations under the License.
   <!-- servlets -->
   <servlet>
     <servlet-name>main</servlet-name>
-    <servlet-class>com.uno.voiceblogger.MainServlet</servlet-class>
+    <servlet-class>com.partlycloudy.swishswish.MainServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>main</servlet-name>
@@ -52,7 +52,7 @@ limitations under the License.
 
   <servlet>
     <servlet-name>oauth2callback</servlet-name>
-    <servlet-class>com.uno.voiceblogger.AuthServlet</servlet-class>
+    <servlet-class>com.partlycloudy.swishswish.AuthServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>oauth2callback</servlet-name>
@@ -61,7 +61,7 @@ limitations under the License.
 
   <servlet>
     <servlet-name>notify</servlet-name>
-    <servlet-class>com.uno.voiceblogger.NotifyServlet</servlet-class>
+    <servlet-class>com.partlycloudy.swishswish.NotifyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>notify</servlet-name>
@@ -70,7 +70,7 @@ limitations under the License.
 
   <servlet>
     <servlet-name>attachmentproxy</servlet-name>
-    <servlet-class>com.uno.voiceblogger.AttachmentProxyServlet</servlet-class>
+    <servlet-class>com.partlycloudy.swishswish.AttachmentProxyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>attachmentproxy</servlet-name>

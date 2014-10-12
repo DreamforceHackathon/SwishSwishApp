@@ -18,15 +18,15 @@ abc
 -->
 <%@ page import="com.google.api.client.auth.oauth2.Credential" %>
 <%@ page import="com.google.api.services.mirror.model.Contact" %>
-<%@ page import="com.uno.voiceblogger.MirrorClient" %> 
-<%@ page import="com.uno.voiceblogger.WebUtil" %>
+<%@ page import="com.partlycloudy.swishswish.MirrorClient" %> 
+<%@ page import="com.partlycloudy.swishswish.WebUtil" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.api.services.mirror.model.TimelineItem" %>
 <%@ page import="com.google.api.services.mirror.model.Subscription" %>
 <%@ page import="com.google.api.services.mirror.model.Attachment" %>
-<%@ page import="com.uno.voiceblogger.MainServlet" %>
+<%@ page import="com.partlycloudy.swishswish.MainServlet" %>
 <%@ page import="org.apache.commons.lang3.StringEscapeUtils" %>
-<%@ page import="com.uno.voiceblogger.AuthUtil" %>
+<%@ page import="com.partlycloudy.swishswish.AuthUtil" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
