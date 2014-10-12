@@ -1,35 +1,116 @@
-<apex:page controller="ManageDealsCtrl" showHeader="true" sidebar="false" standardStylesheets="false">
+<apex:page controller="ManageDealsCtrl" showHeader="false"
+	sidebar="false" standardStylesheets="false">
 	<head>
 <apex:stylesheet value="{!URLFOR ($Resource.jquery_mobile_zip, '/jquery.mobile-1.4.4.css')}" />
 <apex:stylesheet value="{!URLFOR ($Resource.jquery_mobile_zip, '/pavlo.css')}" />
 
 <script src="{!$Resource.jquery_js}"></script>
-<script src="{!URLFOR($Resource.jquery_mobile_zip, '/jquery.mobile-1.4.4.min.js')}"></script>
+<script
+	src="{!URLFOR($Resource.jquery_mobile_zip, '/jquery.mobile-1.4.4.min.js')}"></script>
 <apex:includeScript value="{!URLFOR($Resource.jquery_ui_zip, 'js/jquery-ui-1.9.2.custom.min.js')}" />
-<link rel="stylesheet" href="{!URLFOR($Resource.jquery_ui_zip, 'css/ui-lightness/jquery-ui-1.9.2.custom.min.css')}" />
+<link rel="stylesheet"
+	href="{!URLFOR($Resource.jquery_ui_zip, 'css/ui-lightness/jquery-ui-1.9.2.custom.min.css')}" />
 
 <script>
     jQuery.noConflict();
 </script>
+<style>
+@media ( min-width : 40em ) {
+	/* Show the table header rows and set all cells to display: table-cell */
+	.my-custom-breakpoint td,.my-custom-breakpoint th,.my-custom-breakpoint tbody th,.my-custom-breakpoint tbody td,.my-custom-breakpoint thead td,.my-custom-breakpoint thead th
+		{
+		display: table-cell;
+		margin: 0;
+	}
+	/* Hide the labels in each cell */
+	.my-custom-breakpoint td .ui-table-cell-label,.my-custom-breakpoint th .ui-table-cell-label
+		{
+		display: none;
+	}
+}
+</style>
+<script type="text/javascript">
+</script>
+	</head>
 
-</head>
+	<body>
+		<div data-role="page" data-theme="b" style="padding: 10px;">
+			<div data-role="header" data-add-back-btn="false">Manage deals
+				or create the new one</div>
+			<div data-role="content">
 
-<body>
-	<div data-role="page" data-theme="b"  style="padding:10px;">
-		<div data-role="header" data-add-back-btn="false">Manage deals or create the new one</div>
-		<div data-role="content">
-			<table id="my-table" class="ui-responsive table-stroke ui-table ui-table-reflow" data-mode="reflow" data-role="table">
-				<thead>
-					<tr>
-						
-					</tr>
-				</thead>
-				<tbody>
-					<tr></tr>
-				</tbody>
-			</table>
+				<apex:outputPanel id="theMessage" rendered="{!noDealsFould}">
+					<center>
+						<div class='error'>No Deals in system</div>
+					</center>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="theTable" rendered="{!!noDealsFould}">
+					<table id="my-table"
+						class="ui-responsive table-stroke ui-table ui-table-reflow"
+						data-mode="reflow" data-role="table">
+						<thead>
+							<tr>
+								<th>Account</th>
+								<th>Address</th>
+								<th>Comment</th>
+								<th>Radius</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<apex:repeat value="{!deals}" var="deal" id="dealsTable">
+								<tr>
+									<td><apex:outputField value="{!deal.Account__r.Name}" /></td>
+									<td><apex:outputField value="{!deal.Address__c}" /></td>
+									<td><apex:outputField value="{!deal.Comment__c}" /></td>
+									<td><apex:outputField value="{!deal.radius__c}" /></td>
+									<td>
+										<div data-role="controlgroup">
+											<a href="#" data-role="button" data-icon="delete"
+												onclick="del('{!deal.Id}')"></a> <a href="#"
+												data-role="button" data-icon="gear"
+												onclick="edit('{!deal.Id}')"></a>
+										</div>
+									</td>
+								</tr>
+							</apex:repeat>
+						</tbody>
+					</table>
+				</apex:outputPanel>
+
+				<a href="#" data-role="button" data-icon="plus" onclick="add()">Add</a>
+			</div>
+			<div data-role="footer">Your Partly Cloudy Marketing Source</div>
 		</div>
-		<div data-role="footer">Your Partly Cloudy Marketing Source</div>
-	</div>
-</body>
+		
+		<div id="popupBasic" data-role="dialog" data-url="popup" tabindex="0"
+			class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active"
+			style="min-height: 424px; display: none;">
+			<div role="dialog"
+				class="ui-dialog-contain ui-overlay-shadow ui-corner-all" style="background-color: white;">
+				<div data-theme="e" data-role="header" class="ui-header ui-bar-e"
+					role="banner">
+					<a data-iconpos="notext" data-icon="delete"
+						class="ui-btn-left ui-btn ui-btn-up-e ui-shadow ui-btn-corner-all ui-btn-icon-delete"
+						href="#" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Close" onclick="closePopup()">
+						<span class="ui-btn-inner"> 
+							<span class="ui-btn-text">Close</span> 
+							<span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span>
+						</span>
+					</a>
+					<h1 class="ui-title" role="heading" aria-level="1">Add New Deal</h1>
+				</div>
+				<!-- /header -->
+				<div data-role="content" class="ui-content ui-body-d" role="main">
+					<h2>Deal Details</h2>
+				</div>
+				<!-- /content -->
+				<div data-role="footer" class="ui-footer ui-bar-a" role="contentinfo">
+					<h4 class="ui-title" role="heading" aria-level="1"></h4>
+				</div>
+				<!-- /footer -->
+			</div>
+		</div>
+	</body>
 </apex:page>

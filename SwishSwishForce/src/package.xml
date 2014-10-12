@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SwishSwish</fullName>
     <types>
-        <members>*</members>
+        <members>LocationCallouts</members>
+        <members>ManageDealsCtrl</members>
+        <members>MessageCallouts</members>
         <name>ApexClass</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexComponent</name>
     </types>
     <types>
         <members>DealAlertAdmin</members>
@@ -14,7 +13,8 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SendMessageTrigger</members>
+        <members>SetGeolocation</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -22,16 +22,39 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>DealAlert__c.Address__c</members>
+        <members>DealAlert__c.Comment__c</members>
+        <members>DealAlert__c.account__c</members>
+        <members>DealAlert__c.imageURL__c</members>
+        <members>DealAlert__c.loc__c</members>
+        <members>DealAlert__c.radius__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>DealAlert__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
         <members>DealAlertAdmin</members>
         <name>CustomTab</name>
     </types>
     <types>
         <members>Images</members>
-        <members>Images/partlycloudy_logo.jpg</members>
+        <members>Images/partlycloudy_logo.jpeg</members>
         <name>Document</name>
     </types>
     <types>
-        <members>*</members>
+        <members>DealAlert__c-Deal Alert Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>DealAlert__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>jquery_js</members>
+        <members>jquery_mobile_zip</members>
+        <members>jquery_ui_zip</members>
         <name>StaticResource</name>
     </types>
     <version>31.0</version>
