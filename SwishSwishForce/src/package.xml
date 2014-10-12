@@ -9,12 +9,26 @@
         <name>ApexComponent</name>
     </types>
     <types>
-        <members>*</members>
+        <members>DealAlertAdmin</members>
+        <members>Manage_Deals</members>
         <name>ApexPage</name>
     </types>
     <types>
         <members>*</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>SwishSwish</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>DealAlertAdmin</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Images</members>
+        <members>Images/partlycloudy_logo.jpg</members>
+        <name>Document</name>
     </types>
     <types>
         <members>*</members>

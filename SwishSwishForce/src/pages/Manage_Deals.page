@@ -1,4 +1,4 @@
-<apex:page showHeader="true" sidebar="false" standardStylesheets="false">
+<apex:page controller="ManageDealsCtrl" showHeader="true" sidebar="false" standardStylesheets="false">
 	<head>
 <apex:stylesheet value="{!URLFOR ($Resource.jquery_mobile_zip, '/jquery.mobile-1.4.4.css')}" />
 <apex:stylesheet value="{!URLFOR ($Resource.jquery_mobile_zip, '/pavlo.css')}" />
@@ -16,13 +16,18 @@
 
 <body>
 	<div data-role="page" data-theme="b"  style="padding:10px;">
-		<div data-role="header" data-add-back-btn="false">Deal Admin</div>
+		<div data-role="header" data-add-back-btn="false">Manage deals or create the new one</div>
 		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
-				<li data-role="list-divider">Actions</li>
-				<li><a href="{!URLFOR($Page.Manage_Deals)}" data-transition="flip">Manage Deals</a></li>
-				<li><a href="#" data-transition="flip">Manage Marketing Emails</a></li>
-			</ul>
+			<table id="my-table" class="ui-responsive table-stroke ui-table ui-table-reflow" data-mode="reflow" data-role="table">
+				<thead>
+					<tr>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr></tr>
+				</tbody>
+			</table>
 		</div>
 		<div data-role="footer">Your Partly Cloudy Marketing Source</div>
 	</div>
